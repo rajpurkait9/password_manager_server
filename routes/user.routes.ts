@@ -8,7 +8,7 @@ import {
 
 const router = Router();
 
-router.get("/user/register", CreateUser);
+router.post("/user/register", CreateUser);
 router.patch("/user/update/userId", UpdateUser);
 router.delete("/user/delete/userId", DeleteUser);
 router.get("/user/userId", GetUserById);
