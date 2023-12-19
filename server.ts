@@ -2,12 +2,14 @@ import express, { Application } from "express";
 import { config } from "dotenv";
 import router from "./routes/user.routes";
 import connectMongo from "./DBs/connectMongo";
+import morgan from "morgan";
 
 const app: Application = express();
 config();
 
 // middlewares
 app.use(express.json());
+app.use(morgan("tiny"));
 
 // routes
 app.use("/api/v1", router);
