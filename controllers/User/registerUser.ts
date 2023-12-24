@@ -49,7 +49,9 @@ const GetUserById = async (req: Request, res: Response, next: NextFunction) => {
 const GetUsers = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const users = await UserModel.find();
-    res.status(200).json(users);
+    setTimeout(() => {
+      res.status(200).json(users);
+    }, 2000);
   } catch (error: any) {
     // ErrorCatcher(error, req, res, next);
   }

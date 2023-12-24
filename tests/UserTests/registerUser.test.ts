@@ -9,6 +9,7 @@ describe("registerUser module", () => {
         name: "test",
         email: "rajpurkait9@gmail.com",
         password: "test",
+        mobileNumber: "1234567890",
       }),
     });
     expect(response.status).toBe(201);
