@@ -73,4 +73,4 @@ const getAllPassword = async (req: Request, res: Response) => {
   }
 };
 
-export { createPassword, updatePassword, deletePassword };
+export { createPassword, updatePassword, deletePassword, getAllPassword };
