@@ -7,9 +7,9 @@ import {
 } from "../controllers/Password/passwordContorller";
 
 const passwordRouter = Router();
-passwordRouter.get("/password", getAllPassword);
-passwordRouter.post("/password", createPassword);
-passwordRouter.put("/password", updatePassword);
-passwordRouter.delete("/password", deletePassword);
+passwordRouter.get("/password/getall", getAllPassword);
+passwordRouter.post("/password/create", createPassword);
+passwordRouter.put("/password/update", updatePassword);
+passwordRouter.delete("/password/delete", deletePassword);
 
 export default passwordRouter;
