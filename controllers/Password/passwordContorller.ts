@@ -14,7 +14,7 @@ const createPassword = async (req: Request, res: Response) => {
       note,
       website,
     });
-    res.status(201).json({ message: "Password created", data: newPassword });
+    res.status(201).json(newPassword);
   } catch (error: any) {
     console.log(error.message);
     res.status(500).json({ message: error.message });
@@ -59,15 +59,13 @@ const deletePassword = async (req: Request, res: Response) => {
 
 const getAllPassword = async (req: Request, res: Response) => {
   try {
-    const { userId } = req.body;
+    const { userId } = req.params;
     if (!userId) {
       res.status(400).json({ message: "please provide a user id" });
       return;
     }
-
     const allpassword = await PasswordModel.find({ user: userId });
-
-    res.status(200).json({ message: "Password created", data: allpassword });
+    res.status(200).json(allpassword);
   } catch (error: any) {
     console.log(error.message);
     res.status(500).json({ message: error.message });
